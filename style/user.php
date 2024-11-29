@@ -156,6 +156,7 @@ $i = 1;
                         <td><?= $row['isi'] ?></td>
                         <td>
                             <a href="delete.php?id=<?= $row['id']?>" class="btn btn-light-blue btn-sm"><i class="bi bi-trash"></i> Delete</a>
+                            <a href="edit.php?id=<?= $row['id']?>" class="btn btn-light-blue btn-sm">edit</a>
                         </td>
                     </tr>
                     <?php $i++; } ?>

@@ -67,6 +67,7 @@ function login($request) {
 
             // Set sesi
             $_SESSION['login'] = true;
+            $_SESSION['id'] = $dataFetch['if'];
             header('location: ../style/index.php');
             exit;
         } else {
