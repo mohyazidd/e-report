@@ -1,4 +1,14 @@
 <?php
+// include('connect.php');
+include('function.php');
+session_start();
+if(empty($_SESSION['login'])) {
+    header('location: ../auth/login.php');
+    exit;
+}
+if(isset($_POST['register'])) {
+    register($_POST);
+}
 require('../database/connect.php');
 $query = mysqli_query($conn,"SELECT * FROM pengaduan");
 $i = 1;

@@ -1,7 +1,10 @@
 <?php
-session_start();
-if (isset($_SESSION['login']) && $_SESSION['login'] == true) { 
-    header('Location:style/index.php');
-}else{
-    header('Location:auth/login.php');
-}
+	if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
+		$uri = 'https://';
+	} else {
+		$uri = 'http://';
+	}
+	$uri .= $_SERVER['HTTP_HOST'];
+	header('Location: '.$uri.'/dashboard/');
+	exit;
+?>

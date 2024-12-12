@@ -1,7 +1,11 @@
 <?php
 // include('connect.php');
 include('function.php');
-
+session_start();
+if(isset($_SESSION['login'])) {
+    header('location: ../index.php');
+    exit;
+}
 if(isset($_POST['register'])) {
     register($_POST);
 }

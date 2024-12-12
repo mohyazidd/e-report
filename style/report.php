@@ -1,4 +1,14 @@
 <?php
+// include('connect.php');
+include('function.php');
+session_start();
+if(empty($_SESSION['login'])) {
+    header('location: ../auth/login.php');
+    exit;
+}
+if(isset($_POST['register'])) {
+    register($_POST);
+}
 include('../database/connect.php');
 
 if(isset($_GET['submit'])) {
